@@ -12,7 +12,7 @@ from langchain.chains import RetrievalQA
 
  
 url = 'http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty'
-params ={'serviceKey' : 'uuiP9ecF/DdtMXPgok9ActF0w9gbQkIiKeJvtjjDBtdOFA90FQnzF5i48cAH7QTk2wPOqmipRVfS32TcrQMo6w==', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'sidoName' : '서울', 'ver' : '1.0' }
+params ={'serviceKey' : API_key, 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'sidoName' : '서울', 'ver' : '1.0' }
  
 response = requests.get(url, params=params)
 
@@ -20,7 +20,7 @@ response = requests.get(url, params=params)
 sido = "서울"
 def seoul_pm_query(sido):
     url = 'http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty'
-    params = {'serviceKey' : 'uuiP9ecF/DdtMXPgok9ActF0w9gbQkIiKeJvtjjDBtdOFA90FQnzF5i48cAH7QTk2wPOqmipRVfS32TcrQMo6w==', 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'sidoName' : '서울', 'ver' : '1.0' }
+    params = {'serviceKey' : API_key, 'returnType' : 'json', 'numOfRows' : '100', 'pageNo' : '1', 'sidoName' : '서울', 'ver' : '1.0' }
     response = requests.get(url, params=params)
     content = response.content.decode('utf-8')
     data = json.loads(content)
